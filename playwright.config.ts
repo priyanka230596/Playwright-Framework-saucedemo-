@@ -6,9 +6,10 @@ import { defineConfig, devices } from '@playwright/test';
  */
 import dotenv from 'dotenv';
 import path from 'path';
+const env = process.env.TEST_ENV || 'dev';
 // dotenv.config({path:path.resolve(__dirname,'.env')})
 dotenv.config({
-  path:`./env-files/.env.${process.env.TEST_ENV}`
+   path: `./env-files/.env.${env}`
 })
 
 /**
@@ -37,7 +38,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
     video:'retain-on-failure',
     screenshot:'only-on-failure',
-    headless:false,
+    headless:true,
     // storageState: './tests/storageState/user.json'
     
   },
