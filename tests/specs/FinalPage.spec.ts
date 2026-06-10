@@ -42,7 +42,7 @@ test.describe('final page validation',async()=>{
         expect(succcess_msg).toEqual('Thank you for your order!')
     })
     
-    test.only('validate backHome button functionality',async({page})=>{
+    test('validate backHome button functionality',async({page})=>{
         await finalPage.clickOnBackHomeBtn()
         expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
 

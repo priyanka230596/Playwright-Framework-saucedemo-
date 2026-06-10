@@ -1,8 +1,10 @@
-import {chromium, expect, test as setup } from '@playwright/test'
-import testdata from '../../utils/testdata/testdata.json'
+import {chromium, FullConfig } from '@playwright/test'
+import testdata from './utils/testdata/testdata.json'
 let logindata=JSON.parse(JSON.stringify(testdata))
 console.log(logindata)
-setup('login once',async({})=>{
+
+async function globalSetup(config:FullConfig): Promise<void> {
+    
     const browser= await chromium.launch()
     const context=await browser.newContext()
     const page=await context.newPage()
@@ -11,8 +13,11 @@ setup('login once',async({})=>{
     await page.getByPlaceholder('Username').fill(logindata.username)
     await page.getByPlaceholder('Password').fill(logindata.Password)
     await page.locator('#login-button').click()
-    await page.context().storageState({path:'tests/storageState/user.json'})
+    await page.context().storageState({path:'user.json'})
+    await browser.close()
     // expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
-   const webcontext= await browser.newContext({storageState:"user.json"})
+//    const webcontext= await browser.newContext({storageState:"user.json"})
     
-})
+
+}
+export default globalSetup;
