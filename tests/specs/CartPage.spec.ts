@@ -24,6 +24,7 @@ test.describe('cart page validation', () => {
         expect((await UI).cartTitle).toBeVisible()
         expect((await UI).checkoutBtn).toBeVisible()
         expect((await UI).shoppingcart).toBeVisible()
+        console.log((await UI).cartTitle)
 
 
     })
