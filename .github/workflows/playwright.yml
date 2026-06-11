@@ -67,7 +67,7 @@ jobs:
     - name: Run Playwright tests (Shard ${{ matrix.shard }})
       run: npx playwright test --shard=${{ matrix.shard }}/4
 
-      - name: Debug Env
+    - name: Debug Env
       run: echo $TEST_ENV
       
     - uses: actions/upload-artifact@v4
