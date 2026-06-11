@@ -64,7 +64,7 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
 
-    - name: Run Playwright tests (Shard ${{ matrix.shard }})
+    - name: Run Playwright tests
       run: npx playwright test --shard=${{ matrix.shard }}/4
 
     - name: Debug Env
@@ -75,5 +75,5 @@ jobs:
       with:
         name: playwright-report
         path: playwright-report/
-        retention-days: 30
+        retention-days: 30   
 
