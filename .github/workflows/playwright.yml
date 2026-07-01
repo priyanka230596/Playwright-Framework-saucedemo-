@@ -106,7 +106,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TEST_ENV: ${{ github.event.inputs.environment || 'dev' }}
+      TEST_ENV: ${{ github.event.inputs.environment || 'qa' }}
 
     strategy:
       matrix:
