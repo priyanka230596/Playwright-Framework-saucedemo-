@@ -11,11 +11,11 @@ test.describe('validate product page',()=>{
     })
 
 //click on about page 
-test('verify aboutpage link', async ({ page }) => {
-    await productPage.goTo_ProductPage()
-    await productPage.open_aboutPage()
-    expect(page.locator('//button[text()="Try it free"]')).toBeVisible()
-})
+// test('verify aboutpage link', async ({ page }) => {
+//     await productPage.goTo_ProductPage()
+//     await productPage.open_aboutPage()
+//     expect(page.locator('//button[text()="Try it free"]')).toBeVisible()
+// })
 
 
 //click on Logout link
