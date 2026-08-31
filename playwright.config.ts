@@ -12,9 +12,9 @@ dotenv.config({
    path: `./env-files/.env.${env}`
 })
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
+// /**
+//  * See https://playwright.dev/docs/test-configuration.
+//  */
 export default defineConfig({
   globalSetup: './global_setup.ts',
   testDir: './tests',
@@ -32,7 +32,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html'],['list']],
   retries:1,
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+//   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
@@ -42,29 +42,19 @@ export default defineConfig({
     video:'retain-on-failure',
     screenshot:'only-on-failure',
     headless:true,
-    // storageState: './tests/storageState/user.json'
+    
     storageState: 'user.json'
     
   },
 
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name:'setup',
-    //   testMatch:/.*\.setup\.ts/
-
-    // },
-    // {
-    //   name: 'chromium',
-    //   use:{
-    //     storageState:'./tests/storageState/user.json',
-        
-    //   },
-    //   dependencies:["setup"]
-    // },
+    
      {
       name: 'chromium'
-    }
+    },
+    
+    
 
     // {
     //   name: 'firefox',
@@ -104,3 +94,66 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
+
+
+// or
+
+
+// import { defineConfig } from '@playwright/test';
+// import dotenv from 'dotenv';
+
+// const env = process.env.TEST_ENV || 'qa';
+
+// dotenv.config({
+//   path: `./env-files/.env.${env}`
+// });
+
+// export default defineConfig({
+
+//   globalSetup: './global_setup.ts',
+
+//   testDir: './tests',
+
+//   testMatch: ['**/*.ts'],
+
+//   fullyParallel: true,
+
+//   reporter: [
+//     ['html'],
+//     ['list']
+//   ],
+
+//   retries: 1,
+
+//   use: {
+//     trace: 'retain-on-failure',
+//     video: 'retain-on-failure',
+//     screenshot: 'only-on-failure',
+//     headless: true
+//   },
+
+//   projects: [
+
+//     {
+//       name: 'admin',
+
+//       grep: /@admin/,
+
+//       use: {
+//         storageState: './storageState/admin.json'
+//       }
+//     },
+
+//     {
+//       name: 'client',
+
+//       grep: /@client/,
+
+//       use: {
+//         storageState: './storageState/client.json'
+//       }
+//     }
+
+//   ]
+// });

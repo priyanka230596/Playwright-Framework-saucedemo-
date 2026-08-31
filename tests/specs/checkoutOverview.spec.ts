@@ -4,7 +4,7 @@ import { CheckoutOverviewpage } from '../../pages/CheckoutOverviewpage'
 import { ProductPage } from '../../pages/ProductPage'
 import { Cartpage } from '../../pages/CartPage'
 import { Checkoutpage } from '../../pages/Checkoutpage'
-test.describe('checkoutOverview validation',async()=>{
+test.describe('checkoutOverview validation ',async()=>{
     let productPage: ProductPage;
     let cartPage:Cartpage;
     let checkoutPage:Checkoutpage;

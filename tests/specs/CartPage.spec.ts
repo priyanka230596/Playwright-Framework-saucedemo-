@@ -3,13 +3,17 @@ import { test, expect } from '@playwright/test'
 import { ProductPage } from '../../pages/ProductPage'
 import { Cartpage } from '../../pages/CartPage'
 import { productNames } from '../../utils/testdata/products'
-test.describe('cart page validation', () => {
+test.describe('cart page validation ', () => {
     let productPage: ProductPage
     let cartPage: Cartpage
 
-    test.beforeEach(({ page }) => {
+    test.beforeEach(async({ page }) => {
+         console.log('BEFORE NAVIGATION:', await page.url());
         productPage = new ProductPage(page)
+
         cartPage = new Cartpage(page)
+
+        console.log('AFTER NAVIGATION:', await page.url());
     })
 
 

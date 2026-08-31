@@ -4,7 +4,7 @@ import { Cartpage } from '../../pages/CartPage'
 import { Checkoutpage } from '../../pages/Checkoutpage'
 import { checkoutpage_locators } from '../../Locators/checkoutpage_locators'
 
-test.describe('validation checkoutpage',async()=>{
+test.describe('validation checkoutpage ',async()=>{
     let productPage:ProductPage
     let cartPage:Cartpage
     let checkoutPage:Checkoutpage

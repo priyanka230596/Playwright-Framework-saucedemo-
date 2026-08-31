@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 // import { basepage } from '../../pages/basepage'
 import { ProductPage } from '../../pages/ProductPage'
 
-test.describe('validate product page',()=>{
+test.describe('validate product page ',()=>{
     let productPage:ProductPage
     test.beforeEach(({page})=>{
         productPage=new ProductPage(page)
