@@ -5,8 +5,10 @@ let checkout_filldata=JSON.parse(JSON.stringify(checkout_testdata))
 
 export class Checkoutpage{
     page:Page
+    
     constructor(page:Page){
         this.page=page
+        
     }
     async getCheckoutelements(){
         return{
@@ -17,7 +19,13 @@ export class Checkoutpage{
         }
     }
 
-    async FillCheckoutDetails(){
+    // async FillCheckoutDetails(checkout_testdata:{firstname:string,Lastname:string,postalcode:string}){
+    //     await this.page.locator(checkoutpage_locators.firstname).fill(checkout_testdata.firstname)
+    //     await this.page.locator(checkoutpage_locators.lastname).fill(checkout_testdata.Lastname)
+    //     await this.page.locator(checkoutpage_locators.postalcode).fill(checkout_testdata.postalcode)
+        
+    // }
+     async FillCheckoutDetails(){
         await this.page.locator(checkoutpage_locators.firstname).fill(checkout_filldata.firstname)
         await this.page.locator(checkoutpage_locators.lastname).fill(checkout_filldata.Lastname)
         await this.page.locator(checkoutpage_locators.postalcode).fill(checkout_filldata.postalcode)

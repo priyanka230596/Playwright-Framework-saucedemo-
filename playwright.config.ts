@@ -50,11 +50,22 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     
-     {
-      name: 'chromium'
+    {
+      name:'chromium',
+      use:{...devices['desktop chromium']}
     },
-    
-    
+    // {
+    //   name:'standard_user',
+    //   use:{
+    //      storageState: 'storageState/standard_user.json'
+    //   }
+    // },
+    // {
+    //   name:'problem_user',
+    //   use:{
+    //      storageState: 'storageState/problem_user.json'
+    //   }
+    // }
 
     // {
     //   name: 'firefox',
